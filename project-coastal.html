@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coastal Conservation - Green Minds Youth Initiative</title>
+  <link rel="icon" href="images/green-minds-logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .project-hero {
+      background: linear-gradient(135deg, rgba(46, 139, 87, 0.9) 0%, rgba(61, 165, 106, 0.8) 100%), url('images/coastal-hero.jpg') center/cover no-repeat;
+      color: var(--white);
+      padding: 80px 20px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .coastal-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .coastal-stat-card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--dark-green);
+    }
+
+    .coastal-stat-card i {
+      font-size: 2.5rem;
+      color: var(--dark-green);
+      margin-bottom: 15px;
+    }
+
+    .coastal-stat-card h3 {
+      font-size: 2rem;
+      color: var(--dark-green);
+      margin-bottom: 10px;
+    }
+
+    .conservation-activities {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin: 40px 0;
+    }
+
+    .activity-card {
+      background: var(--light-beige);
+      padding: 25px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .activity-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .activity-card i {
+      font-size: 2.5rem;
+      color: var(--dark-green);
+      margin-bottom: 15px;
+    }
+
+    .beach-success {
+      background: var(--light-beige);
+      padding: 40px;
+      border-radius: var(--border-radius);
+      margin: 40px 0;
+      border-left: 4px solid var(--medium-green);
+    }
+
+    .impact-highlights {
+      background: var(--beige);
+      padding: 40px;
+      border-radius: var(--border-radius);
+      margin: 40px 0;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .highlight-item {
+      padding: 20px;
+    }
+
+    .highlight-item i {
+      font-size: 2rem;
+      color: var(--dark-green);
+      margin-bottom: 15px;
+    }
+
+    .testimonial-section {
+      margin: 40px 0;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      font-size: 4rem;
+      color: var(--light-green);
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      opacity: 0.3;
+    }
+
+    .testimonial-content {
+      font-style: italic;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .testimonial-author img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .author-info h4 {
+      margin: 0;
+      color: var(--dark-green);
+    }
+
+    .author-info p {
+      margin: 5px 0 0;
+      color: var(--medium-gray);
+      font-size: 0.9rem;
+    }
+
+    .coastal-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .gallery-item {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .species-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .species-item {
+      text-align: center;
+      padding: 20px;
+      background: var(--white);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+    }
+
+    .species-item img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Combined Header & Navigation -->
+  <header class="combined-header">
+    <div class="header-nav-container">
+      <!-- Logo and Brand -->
+      <div class="header-brand">
+        <img src="images/green-minds-logo.png" alt="Green Minds Logo" class="header-logo">
+        <div class="header-text">
+          <h1 class="header-title">COASTAL CONSERVATION</h1>
+          <p class="header-subtitle">Protecting Marine Ecosystems for Future Generations</p>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Navigation Content -->
+      <div class="header-nav-content" id="headerNavContent">
+        <!-- Navigation Menu -->
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Search and Social Icons -->
+        <div class="header-utilities">
+          <div class="search-container">
+            <input type="search" placeholder="Search..." id="searchInput">
+            <button type="button" id="searchButton"><i class="fas fa-search"></i></button>
+            <div class="search-results" id="searchResults"></div>
+          </div>
+          
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61569551323460" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/greenmindsyouthinitiative?utm_source=qr&igsh=dXdjbzA1bXltZGU=" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:greenmindsyouthinitiative20@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/+254769718607" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb">
+    <div class="nav-container">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="projects.html">Projects</a>
+      <span class="breadcrumb-separator">/</span>
+      <span>Coastal Conservation</span>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Project Hero Section -->
+    <section class="project-hero">
+      <div class="section-title">
+        <h1>Coastal Conservation Program</h1>
+        <p>Safeguarding Kwale's precious marine ecosystems through community action and education</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="content-section">
+        <h2>Program Overview</h2>
+        <p>Our Coastal Conservation program focuses on protecting Kwale County's beautiful coastline through beach cleanups, mangrove restoration, marine education, and sustainable tourism initiatives. We're working with coastal communities to preserve these vital ecosystems for future generations.</p>
+        
+        <div class="coastal-stats">
+          <div class="coastal-stat-card">
+            <i class="fas fa-trash"></i>
+            <h3>8+</h3>
+            <p>Tonnes of Waste Removed</p>
+          </div>
+          <div class="coastal-stat-card">
+            <i class="fas fa-tree"></i>
+            <h3>2,000+</h3>
+            <p>Mangroves Planted</p>
+          </div>
+          <div class="coastal-stat-card">
+            <i class="fas fa-umbrella-beach"></i>
+            <h3>5</h3>
+            <p>Beach Fronts Protected</p>
+          </div>
+          <div class="coastal-stat-card">
+            <i class="fas fa-users"></i>
+            <h3>300+</h3>
+            <p>Community Volunteers</p>
+          </div>
+        </div>
+
+        <h3>Conservation Activities</h3>
+        <div class="conservation-activities">
+          <div class="activity-card">
+            <i class="fas fa-broom"></i>
+            <h4>Beach Cleanups</h4>
+            <p>Regular community cleanups to remove plastic and other waste from beaches</p>
+          </div>
+          <div class="activity-card">
+            <i class="fas fa-seedling"></i>
+            <h4>Mangrove Restoration</h4>
+            <p>Planting and protecting mangrove forests that serve as crucial marine habitats</p>
+          </div>
+          <div class="activity-card">
+            <i class="fas fa-graduation-cap"></i>
+            <h4>Marine Education</h4>
+            <p>Teaching communities about marine conservation and sustainable practices</p>
+          </div>
+          <div class="activity-card">
+            <i class="fas fa-fish"></i>
+            <h4>Sustainable Fishing</h4>
+            <p>Promoting responsible fishing practices to protect marine biodiversity</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beach Success Story -->
+      <div class="beach-success">
+        <h2><i class="fas fa-star"></i> Success Story: Diani Beach Revival</h2>
+        <p>Diani Beach, one of Kenya's most famous beaches, was facing serious pollution challenges from plastic waste and improper waste management. Through our partnership with Diani Youth Beach Cleaning & Management Service, we've transformed the beach into a cleaner, healthier environment.</p>
+        <p>"When we started, we were collecting over 200kg of plastic waste every week from just one kilometer of beach. Now, through regular cleanups and community education, we've reduced that to about 50kg per week. Tourists are noticing the difference and local businesses are more engaged in keeping the beach clean," says beach manager Ali Hassan.</p>
+        <p>The program has created 15 permanent jobs for youth in beach management and waste collection, turning an environmental challenge into an economic opportunity.</p>
+      </div>
+
+      <!-- Impact Highlights -->
+      <div class="impact-highlights">
+        <h2 style="text-align: center; margin-bottom: 30px;">Conservation Impact</h2>
+        <div class="highlight-grid">
+          <div class="highlight-item">
+            <i class="fas fa-water"></i>
+            <h4>Cleaner Waters</h4>
+            <p>Significant reduction in marine pollution affecting coral reefs</p>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-fish"></i>
+            <h4>Marine Life</h4>
+            <p>Improved habitats for fish, turtles, and other marine species</p>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-tree"></i>
+            <h4>Mangrove Health</h4>
+            <p>Restored mangrove forests providing coastal protection</p>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-dollar-sign"></i>
+            <h4>Tourism Boost</h4>
+            <p>Cleaner beaches attracting more visitors and supporting local economy</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Partner Testimonials -->
+      <div class="testimonial-section">
+        <h2 style="text-align: center; margin-bottom: 30px;">What Our Partners Say</h2>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            "The coastal conservation work by Green Minds has been transformative for our community. The beach cleanups have not only improved the environment but have created employment opportunities for our youth. The mangrove restoration project is protecting our coastline from erosion."
+          </div>
+          <div class="testimonial-author">
+            <img src="images/beach-management-leader.jpg" alt="Beach Management Leader">
+            <div class="author-info">
+              <h4>Ali Hassan</h4>
+              <p>Manager, Diani Youth Beach Cleaning Service</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            "As a hotel owner along Diani Beach, I've seen firsthand how the improved beach environment has attracted more tourists. Our guests appreciate the clean beaches and many participate in the monthly cleanups. This partnership benefits everyone - environment, community, and business."
+          </div>
+          <div class="testimonial-author">
+            <img src="images/hotel-owner.jpg" alt="Hotel Owner">
+            <div class="author-info">
+              <h4>Mr. Patel</h4>
+              <p>Owner, Diani Beach Resort</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            "The marine education programs have changed how our community views the ocean. Our children now understand the importance of protecting marine life and are becoming ambassadors for conservation in their families."
+          </div>
+          <div class="testimonial-author">
+            <img src="images/fisherman-leader.jpg" alt="Fisherman Leader">
+            <div class="author-info">
+              <h4>Mwanaisha Kombo</h4>
+              <p>Women Fisherfolk Leader, Gazi Bay</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Species Showcase -->
+      <div class="species-showcase">
+        <h2 style="grid-column: 1/-1; text-align: center;">Protected Marine Species</h2>
+        <div class="species-item">
+          <img src="images/mangrove-tree.jpg" alt="Mangrove Trees">
+          <h4>Mangroves</h4>
+          <p>Coastal forests that protect shorelines and provide fish habitats</p>
+        </div>
+        <div class="species-item">
+          <img src="images/sea-turtle.jpg" alt="Sea Turtle">
+          <h4>Sea Turtles</h4>
+          <p>Endangered species that nest on Kwale's beaches</p>
+        </div>
+        <div class="species-item">
+          <img src="images/coral-reef.jpg" alt="Coral Reef">
+          <h4>Coral Reefs</h4>
+          <p>Biodiversity hotspots threatened by pollution</p>
+        </div>
+        <div class="species-item">
+          <img src="images/dolphins.jpg" alt="Dolphins">
+          <h4>Dolphins</h4>
+          <p>Marine mammals frequently spotted along the coast</p>
+        </div>
+      </div>
+
+      <!-- Coastal Gallery -->
+      <div class="coastal-gallery">
+        <h2 style="grid-column: 1/-1; text-align: center;">Conservation in Action</h2>
+        <div class="gallery-item">
+          <img src="images/beach-cleanup-activity.jpg" alt="Beach cleanup activity">
+        </div>
+        <div class="gallery-item">
+          <img src="images/mangrove-planting.jpg" alt="Mangrove planting">
+        </div>
+        <div class="gallery-item">
+          <img src="images/marine-education.jpg" alt="Marine education session">
+        </div>
+        <div class="gallery-item">
+          <img src="images/clean-beach-result.jpg" alt="Clean beach result">
+        </div>
+      </div>
+
+      <!-- Monthly Activities -->
+      <div class="content-section">
+        <h2>Monthly Conservation Activities</h2>
+        <ul>
+          <li><strong>First Saturday:</strong> Community Beach Cleanup at Diani Beach</li>
+          <li><strong>Second Week:</strong> Mangrove Planting and Monitoring in Gazi Bay</li>
+          <li><strong>Third Saturday:</strong> Marine Education for School Children</li>
+          <li><strong>Last Week:</strong> Fisherfolk Training on Sustainable Practices</li>
+          <li><strong>Ongoing:</strong> Waste Collection and Recycling from Beach Areas</li>
+        </ul>
+      </div>
+
+      <!-- Get Involved -->
+      <div class="content-section" style="text-align: center;">
+        <h2>Protect Our Coastal Heritage</h2>
+        <p>Join us in preserving Kwale's beautiful coastline for future generations.</p>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+          <a href="contact.html" class="btn">Join Beach Cleanup</a>
+          <a href="#" class="btn btn-secondary">Adopt a Mangrove</a>
+          <a href="contact.html" class="btn">Organize Marine Education</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <img src="images/fazil-chinoy-logo.jpg" alt="Fazil Chinoy Fellowship" class="footer-logo">
+      
+      <div class="footer-middle">
+        <div class="footer-social">
+          <a href="https://www.facebook.com/profile.php?id=61569551323460" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/greenmindsyouthinitiative?utm_source=qr&igsh=dXdjbzA1bXltZGU=" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:greenmindsyouthinitiative20@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://wa.me/+254769718607" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Legal Links -->
+        <div class="legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        
+        <p class="copyright">&copy; 2025 Green Minds Youth Initiative. All Rights Reserved.</p>
+      </div>
+      
+      <img src="images/sambasports-logo.jpg" alt="SambaSports Youth Trust" class="footer-logo">
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

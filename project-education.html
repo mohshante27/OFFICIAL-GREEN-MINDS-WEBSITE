@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Schools Program - Green Minds Youth Initiative</title>
+  <link rel="icon" href="images/green-minds-logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .project-hero {
+      background: linear-gradient(135deg, rgba(46, 139, 87, 0.9) 0%, rgba(61, 165, 106, 0.8) 100%), url('images/education-hero.jpg') center/cover no-repeat;
+      color: var(--white);
+      padding: 80px 20px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .program-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .program-stat-card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--dark-green);
+    }
+
+    .program-stat-card i {
+      font-size: 2.5rem;
+      color: var(--dark-green);
+      margin-bottom: 15px;
+    }
+
+    .program-stat-card h3 {
+      font-size: 2rem;
+      color: var(--dark-green);
+      margin-bottom: 10px;
+    }
+
+    .school-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin: 40px 0;
+    }
+
+    .feature-card {
+      background: var(--light-beige);
+      padding: 25px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-card i {
+      font-size: 2.5rem;
+      color: var(--dark-green);
+      margin-bottom: 15px;
+    }
+
+    .success-story {
+      background: var(--light-beige);
+      padding: 40px;
+      border-radius: var(--border-radius);
+      margin: 40px 0;
+      border-left: 4px solid var(--medium-green);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      font-size: 4rem;
+      color: var(--light-green);
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      opacity: 0.3;
+    }
+
+    .testimonial-content {
+      font-style: italic;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .testimonial-author img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .author-info h4 {
+      margin: 0;
+      color: var(--dark-green);
+    }
+
+    .author-info p {
+      margin: 5px 0 0;
+      color: var(--medium-gray);
+      font-size: 0.9rem;
+    }
+
+    .impact-showcase {
+      background: var(--beige);
+      padding: 40px;
+      border-radius: var(--border-radius);
+      margin: 40px 0;
+    }
+
+    .impact-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .impact-item {
+      padding: 20px;
+    }
+
+    .impact-item i {
+      font-size: 2rem;
+      color: var(--dark-green);
+      margin-bottom: 15px;
+    }
+
+    .school-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .gallery-item {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Combined Header & Navigation -->
+  <header class="combined-header">
+    <div class="header-nav-container">
+      <!-- Logo and Brand -->
+      <div class="header-brand">
+        <img src="images/green-minds-logo.png" alt="Green Minds Logo" class="header-logo">
+        <div class="header-text">
+          <h1 class="header-title">GREEN SCHOOLS PROGRAM</h1>
+          <p class="header-subtitle">Educating the Next Generation of Environmental Stewards</p>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Navigation Content -->
+      <div class="header-nav-content" id="headerNavContent">
+        <!-- Navigation Menu -->
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Search and Social Icons -->
+        <div class="header-utilities">
+          <div class="search-container">
+            <input type="search" placeholder="Search..." id="searchInput">
+            <button type="button" id="searchButton"><i class="fas fa-search"></i></button>
+            <div class="search-results" id="searchResults"></div>
+          </div>
+          
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61569551323460" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/greenmindsyouthinitiative?utm_source=qr&igsh=dXdjbzA1bXltZGU=" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:greenmindsyouthinitiative20@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/+254769718607" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb">
+    <div class="nav-container">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="projects.html">Projects</a>
+      <span class="breadcrumb-separator">/</span>
+      <span>Green Schools Program</span>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Project Hero Section -->
+    <section class="project-hero">
+      <div class="section-title">
+        <h1>Green Schools Program</h1>
+        <p>Transforming schools into environmental learning hubs and empowering students as eco-ambassadors</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="content-section">
+        <h2>Program Overview</h2>
+        <p>The Green Schools Program integrates environmental education into school curricula while creating practical learning opportunities through school gardens, waste management systems, and conservation clubs. We're nurturing environmentally conscious citizens from a young age.</p>
+        
+        <div class="program-stats">
+          <div class="program-stat-card">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>800+</h3>
+            <p>Students Educated</p>
+          </div>
+          <div class="program-stat-card">
+            <i class="fas fa-school"></i>
+            <h3>5</h3>
+            <p>Schools Participating</p>
+          </div>
+          <div class="program-stat-card">
+            <i class="fas fa-seedling"></i>
+            <h3>12</h3>
+            <p>School Gardens</p>
+          </div>
+          <div class="program-stat-card">
+            <i class="fas fa-recycle"></i>
+            <h3>8</h3>
+            <p>Eco-Clubs Formed</p>
+          </div>
+        </div>
+
+        <h3>Program Components</h3>
+        <div class="school-features">
+          <div class="feature-card">
+            <i class="fas fa-book-open"></i>
+            <h4>Environmental Curriculum</h4>
+            <p>Integration of environmental topics into science, geography, and social studies lessons</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-leaf"></i>
+            <h4>School Gardens</h4>
+            <p>Establishment of vegetable gardens and tree nurseries for hands-on learning</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-recycle"></i>
+            <h4>Waste Management</h4>
+            <p>Implementation of recycling systems and composting in school compounds</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-users"></i>
+            <h4>Eco-Clubs</h4>
+            <p>Formation of student environmental clubs for peer-to-peer education</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success Story -->
+      <div class="success-story">
+        <h2><i class="fas fa-star"></i> Success Story: Waa Primary School Transformation</h2>
+        <p>Waa Primary School has become a model green school in Kwale County. What started as a small school garden has grown into a comprehensive environmental program that involves the entire school community.</p>
+        <p>"Our students used to throw litter everywhere, but now they're the ones picking up trash and teaching their parents about recycling. The school garden provides vegetables for our lunch program, and the children are learning valuable agricultural skills," says Headteacher Mr. Johnson.</p>
+        <p>The school has reduced its waste by 70% through recycling and composting, and the garden produces enough vegetables to supplement the school feeding program twice a week.</p>
+      </div>
+
+      <!-- Impact Showcase -->
+      <div class="impact-showcase">
+        <h2 style="text-align: center; margin-bottom: 30px;">Program Impact</h2>
+        <div class="impact-items">
+          <div class="impact-item">
+            <i class="fas fa-chart-line"></i>
+            <h4>85%</h4>
+            <p>Increase in environmental awareness among students</p>
+          </div>
+          <div class="impact-item">
+            <i class="fas fa-trash-alt"></i>
+            <h4>70%</h4>
+            <p>Reduction in school waste</p>
+          </div>
+          <div class="impact-item">
+            <i class="fas fa-utensils"></i>
+            <h4>200+</h4>
+            <p>School meals supplemented with garden produce weekly</p>
+          </div>
+          <div class="impact-item">
+            <i class="fas fa-tree"></i>
+            <h4>500+</h4>
+            <p>Trees planted by students in school compounds</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Partner Testimonials -->
+      <div class="testimonial-grid">
+        <h2 style="grid-column: 1/-1; text-align: center;">What Our Partners Say</h2>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            "The Green Schools Program has transformed how we teach environmental education. Our students are not just learning from books - they're living the lessons through practical activities in the school garden and recycling projects."
+          </div>
+          <div class="testimonial-author">
+            <img src="images/headteacher-waa.jpg" alt="Headteacher Waa Primary">
+            <div class="author-info">
+              <h4>Mr. Johnson Mwadime</h4>
+              <p>Headteacher, Waa Primary School</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            "As a parent, I'm amazed at how much my child has learned about the environment. She now reminds us to separate our waste at home and has started a small vegetable garden in our backyard. This program is creating real change."
+          </div>
+          <div class="testimonial-author">
+            <img src="images/parent-testimonial.jpg" alt="Parent">
+            <div class="author-info">
+              <h4>Mama Asha</h4>
+              <p>Parent, Mwabungu Community</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            "The eco-club has given our students leadership opportunities and a platform to express their environmental concerns. They've organized clean-up campaigns and tree planting activities that have impacted the wider community."
+          </div>
+          <div class="testimonial-author">
+            <img src="images/teacher-environment.jpg" alt="Environmental Teacher">
+            <div class="author-info">
+              <h4>Teacher Grace Achieng</h4>
+              <p>Environmental Club Patron, Tiwi Secondary</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- School Gallery -->
+      <div class="school-gallery">
+        <h2 style="grid-column: 1/-1; text-align: center;">Program in Action</h2>
+        <div class="gallery-item">
+          <img src="images/school-garden-activity.jpg" alt="Students working in school garden">
+        </div>
+        <div class="gallery-item">
+          <img src="images/eco-club-meeting.jpg" alt="Eco-club meeting">
+        </div>
+        <div class="gallery-item">
+          <img src="images/recycling-school.jpg" alt="School recycling program">
+        </div>
+        <div class="gallery-item">
+          <img src="images/tree-planting-school.jpg" alt="Students planting trees">
+        </div>
+      </div>
+
+      <!-- Program Achievements -->
+      <div class="content-section">
+        <h2>Key Achievements</h2>
+        <ul>
+          <li>Established environmental clubs in all 5 participating schools</li>
+          <li>Trained 45 teachers on integrating environmental education</li>
+          <li>Created 12 productive school gardens averaging 50m² each</li>
+          <li>Reduced school waste through recycling and composting systems</li>
+          <li>Organized 3 inter-school environmental competitions</li>
+          <li>Produced 800+ eco-ambassadors in the community</li>
+        </ul>
+      </div>
+
+      <!-- Get Involved -->
+      <div class="content-section" style="text-align: center;">
+        <h2>Bring Green Schools to Your Institution</h2>
+        <p>Help us expand environmental education to more schools in Kwale County.</p>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+          <a href="contact.html" class="btn">Register Your School</a>
+          <a href="#" class="btn btn-secondary">Sponsor a School Garden</a>
+          <a href="contact.html" class="btn">Volunteer as Educator</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <img src="images/fazil-chinoy-logo.jpg" alt="Fazil Chinoy Fellowship" class="footer-logo">
+      
+      <div class="footer-middle">
+        <div class="footer-social">
+          <a href="https://www.facebook.com/profile.php?id=61569551323460" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/greenmindsyouthinitiative?utm_source=qr&igsh=dXdjbzA1bXltZGU=" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:greenmindsyouthinitiative20@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://wa.me/+254769718607" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Legal Links -->
+        <div class="legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        
+        <p class="copyright">&copy; 2025 Green Minds Youth Initiative. All Rights Reserved.</p>
+      </div>
+      
+      <img src="images/sambasports-logo.jpg" alt="SambaSports Youth Trust" class="footer-logo">
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

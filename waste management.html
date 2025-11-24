@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zero Waste Communities - Green Minds Youth Initiative</title>
+  <link rel="icon" href="images/green-minds-logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .project-hero {
+      background: linear-gradient(135deg, rgba(46, 139, 87, 0.9) 0%, rgba(61, 165, 106, 0.8) 100%), url('images/waste-management-hero.jpg') center/cover no-repeat;
+      color: var(--white);
+      padding: 80px 20px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .impact-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .impact-card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .impact-card.recycled {
+      border-top: 4px solid #4CAF50;
+    }
+
+    .impact-card.communities {
+      border-top: 4px solid #2196F3;
+    }
+
+    .impact-card.jobs {
+      border-top: 4px solid #FF9800;
+    }
+
+    .impact-card i {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .impact-card.recycled i { color: #4CAF50; }
+    .impact-card.communities i { color: #2196F3; }
+    .impact-card.jobs i { color: #FF9800; }
+
+    .impact-card h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .program-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin: 40px 0;
+    }
+
+    .feature-card {
+      background: var(--light-beige);
+      padding: 25px;
+      border-radius: var(--border-radius);
+      text-align: center;
+    }
+
+    .feature-card i {
+      font-size: 2.5rem;
+      color: var(--dark-green);
+      margin-bottom: 15px;
+    }
+
+    .success-metrics {
+      background: var(--beige);
+      padding: 40px;
+      border-radius: var(--border-radius);
+      margin: 40px 0;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .metric-item h4 {
+      color: var(--dark-green);
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+    }
+
+    .testimonial-carousel {
+      position: relative;
+      margin: 40px 0;
+    }
+
+    .testimonial-slide {
+      background: var(--white);
+      padding: 40px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      display: none;
+    }
+
+    .testimonial-slide.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .testimonial-nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .testimonial-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--light-gray);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .testimonial-dot.active {
+      background: var(--dark-green);
+    }
+  </style>
+</head>
+<body>
+  <!-- Combined Header & Navigation -->
+  <header class="combined-header">
+    <div class="header-nav-container">
+      <!-- Logo and Brand -->
+      <div class="header-brand">
+        <img src="images/green-minds-logo.png" alt="Green Minds Logo" class="header-logo">
+        <div class="header-text">
+          <h1 class="header-title">ZERO WASTE COMMUNITIES</h1>
+          <p class="header-subtitle">Transforming Waste into Resources</p>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Navigation Content -->
+      <div class="header-nav-content" id="headerNavContent">
+        <!-- Navigation Menu -->
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Search and Social Icons -->
+        <div class="header-utilities">
+          <div class="search-container">
+            <input type="search" placeholder="Search..." id="searchInput">
+            <button type="button" id="searchButton"><i class="fas fa-search"></i></button>
+            <div class="search-results" id="searchResults"></div>
+          </div>
+          
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61569551323460" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/greenmindsyouthinitiative?utm_source=qr&igsh=dXdjbzA1bXltZGU=" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:greenmindsyouthinitiative20@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/+254769718607" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb">
+    <div class="nav-container">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="projects.html">Projects</a>
+      <span class="breadcrumb-separator">/</span>
+      <span>Zero Waste Communities</span>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Project Hero Section -->
+    <section class="project-hero">
+      <div class="section-title">
+        <h1>Zero Waste Communities Program</h1>
+        <p>Transforming waste management through recycling, upcycling, and community education</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="content-section">
+        <h2>Program Overview</h2>
+        <p>Our Zero Waste Communities initiative addresses the growing waste management challenges in Kwale County through a comprehensive approach that combines waste segregation, recycling, upcycling, and community education. We're turning waste problems into economic opportunities while protecting our environment.</p>
+        
+        <div class="impact-highlights">
+          <div class="impact-card recycled">
+            <i class="fas fa-recycle"></i>
+            <h3>15+</h3>
+            <p>Tonnes Recycled</p>
+          </div>
+          <div class="impact-card communities">
+            <i class="fas fa-home"></i>
+            <h3>5</h3>
+            <p>Communities Engaged</p>
+          </div>
+          <div class="impact-card jobs">
+            <i class="fas fa-briefcase"></i>
+            <h3>12</h3>
+            <p>Green Jobs Created</p>
+          </div>
+        </div>
+
+        <h3>Program Components</h3>
+        <div class="program-features">
+          <div class="feature-card">
+            <i class="fas fa-trash-alt"></i>
+            <h4>Waste Segregation</h4>
+            <p>Training households and businesses on proper waste separation at source</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-industry"></i>
+            <h4>Recycling Centers</h4>
+            <p>Establishing community recycling collection points and processing facilities</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-paint-brush"></i>
+            <h4>Upcycling Workshops</h4>
+            <p>Transforming waste materials into valuable products through creative workshops</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success Metrics -->
+      <div class="success-metrics">
+        <h2 style="text-align: center; margin-bottom: 30px;">Our Impact in Numbers</h2>
+        <div class="metric-grid">
+          <div class="metric-item">
+            <h4>65%</h4>
+            <p>Reduction in illegal dumping</p>
+          </div>
+          <div class="metric-item">
+            <h4>40+</h4>
+            <p>Households practicing waste segregation</p>
+          </div>
+          <div class="metric-item">
+            <h4>KES 180K</h4>
+            <p>Income generated from recycled materials</p>
+          </div>
+          <div class="metric-item">
+            <h4>85%</h4>
+            <p>Community satisfaction rate</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success Story -->
+      <div class="success-story">
+        <h2><i class="fas fa-star"></i> Success Story: Plastic Bottle Revolution</h2>
+        <p>In Kombani, plastic bottles were a major environmental problem clogging drainage systems and polluting landscapes. Through our upcycling program, we trained youth groups to transform these bottles into eco-bricks for construction and creative art pieces.</p>
+        <p>"We used to see plastic bottles as trash, but now we see them as building materials. Our youth group has built a community shade using eco-bricks and we're earning income from selling decorative items made from upcycled plastics," says Amina, a youth leader.</p>
+        <p>The project has diverted over 2 tonnes of plastic from the environment and created sustainable income for 15 young people in the community.</p>
+      </div>
+
+      <!-- Partner Testimonials Carousel -->
+      <div class="testimonial-carousel">
+        <h2 style="text-align: center; margin-bottom: 30px;">What Our Partners Say</h2>
+        
+        <div class="testimonial-slide active">
+          <div class="testimonial-content">
+            "The Zero Waste program has transformed our community's approach to waste. What was once a problem is now an opportunity. The recycling center has become a community hub for environmental learning and economic activity."
+          </div>
+          <div class="testimonial-author">
+            <img src="images/sambasports-representative.jpg" alt="SambaSports Representative">
+            <div class="author-info">
+              <h4>Mohamed Mwachausa</h4>
+              <p>Director, SambaSports Youth Trust</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testimonial-content">
+            "As a local business owner, I appreciate how this program has cleaned up our trading center. The proper waste management has improved hygiene and made our business environment more attractive to customers."
+          </div>
+          <div class="testimonial-author">
+            <img src="images/business-owner.jpg" alt="Local Business Owner">
+            <div class="author-info">
+              <h4>Fatuma Abdullah</h4>
+              <p>Shop Owner, Kombani Trading Center</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-nav">
+          <span class="testimonial-dot active" data-slide="0"></span>
+          <span class="testimonial-dot" data-slide="1"></span>
+          <span class="testimonial-dot" data-slide="2"></span>
+        </div>
+      </div>
+
+      <!-- Upcycling Products Showcase -->
+      <div class="content-section">
+        <h2>Upcycling Innovation</h2>
+        <p>Discover some of the creative products being made from recycled materials:</p>
+        <div class="program-features">
+          <div class="feature-card">
+            <i class="fas fa-brick"></i>
+            <h4>Eco-Bricks</h4>
+            <p>Plastic bottles filled with non-recyclable plastics used for construction</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-shopping-bag"></i>
+            <h4>Reusable Bags</h4>
+            <p>Durable shopping bags made from recycled fabric and banners</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-gem"></i>
+            <h4>Beaded Jewelry</h4>
+            <p>Beautiful accessories made from rolled paper and plastic beads</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Get Involved -->
+      <div class="content-section" style="text-align: center;">
+        <h2>Join the Zero Waste Movement</h2>
+        <p>Help us create cleaner, healthier communities while generating economic opportunities from waste.</p>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+          <a href="contact.html" class="btn">Start Recycling in Your Community</a>
+          <a href="#" class="btn btn-secondary">Support Our Recycling Center</a>
+          <a href="contact.html" class="btn">Organize an Upcycling Workshop</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <img src="images/fazil-chinoy-logo.jpg" alt="Fazil Chinoy Fellowship" class="footer-logo">
+      
+      <div class="footer-middle">
+        <div class="footer-social">
+          <a href="https://www.facebook.com/profile.php?id=61569551323460" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/greenmindsyouthinitiative?utm_source=qr&igsh=dXdjbzA1bXltZGU=" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:greenmindsyouthinitiative20@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://wa.me/+254769718607" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Legal Links -->
+        <div class="legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        
+        <p class="copyright">&copy; 2025 Green Minds Youth Initiative. All Rights Reserved.</p>
+      </div>
+      
+      <img src="images/sambasports-logo.jpg" alt="SambaSports Youth Trust" class="footer-logo">
+    </div>
+  </footer>
+
+  <script>
+    // Testimonial carousel functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.testimonial-slide');
+      const dots = document.querySelectorAll('.testimonial-dot');
+      let currentSlide = 0;
+
+      function showSlide(n) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        slides[n].classList.add('active');
+        dots[n].classList.add('active');
+        currentSlide = n;
+      }
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => showSlide(index));
+      });
+
+      // Auto-advance slides
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }, 5000);
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

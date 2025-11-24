@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustainable Farming - Green Minds Youth Initiative</title>
+  <link rel="icon" href="images/green-minds-logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .project-hero {
+      background: linear-gradient(135deg, rgba(46, 139, 87, 0.9) 0%, rgba(61, 165, 106, 0.8) 100%), url('images/agriculture-hero.jpg') center/cover no-repeat;
+      color: var(--white);
+      padding: 80px 20px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .farming-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .farming-stat-card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--dark-green);
+    }
+
+    .farming-stat-card i {
+      font-size: 2.5rem;
+      color: var(--dark-green);
+      margin-bottom: 15px;
+    }
+
+    .farming-stat-card h3 {
+      font-size: 2rem;
+      color: var(--dark-green);
+      margin-bottom: 10px;
+    }
+
+    .techniques-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin: 40px 0;
+    }
+
+    .technique-card {
+      background: var(--light-beige);
+      padding: 25px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .technique-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .technique-card i {
+      font-size: 2.5rem;
+      color: var(--dark-green);
+      margin-bottom: 15px;
+    }
+
+    .farmer-success {
+      background: var(--light-beige);
+      padding: 40px;
+      border-radius: var(--border-radius);
+      margin: 40px 0;
+      border-left: 4px solid var(--medium-green);
+    }
+
+    .farmer-profile {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .farmer-profile img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .testimonial-carousel {
+      position: relative;
+      margin: 40px 0;
+    }
+
+    .testimonial-slide {
+      background: var(--white);
+      padding: 40px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      display: none;
+    }
+
+    .testimonial-slide.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .testimonial-nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .testimonial-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--light-gray);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .testimonial-dot.active {
+      background: var(--dark-green);
+    }
+
+    .crop-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .crop-item {
+      text-align: center;
+      padding: 20px;
+      background: var(--white);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+    }
+
+    .crop-item img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .impact-metrics {
+      background: var(--beige);
+      padding: 40px;
+      border-radius: var(--border-radius);
+      margin: 40px 0;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .metric-item h4 {
+      color: var(--dark-green);
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Combined Header & Navigation -->
+  <header class="combined-header">
+    <div class="header-nav-container">
+      <!-- Logo and Brand -->
+      <div class="header-brand">
+        <img src="images/green-minds-logo.png" alt="Green Minds Logo" class="header-logo">
+        <div class="header-text">
+          <h1 class="header-title">SUSTAINABLE FARMING</h1>
+          <p class="header-subtitle">Climate-Smart Agriculture for Food Security</p>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Navigation Content -->
+      <div class="header-nav-content" id="headerNavContent">
+        <!-- Navigation Menu -->
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Search and Social Icons -->
+        <div class="header-utilities">
+          <div class="search-container">
+            <input type="search" placeholder="Search..." id="searchInput">
+            <button type="button" id="searchButton"><i class="fas fa-search"></i></button>
+            <div class="search-results" id="searchResults"></div>
+          </div>
+          
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61569551323460" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/greenmindsyouthinitiative?utm_source=qr&igsh=dXdjbzA1bXltZGU=" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:greenmindsyouthinitiative20@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/+254769718607" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb">
+    <div class="nav-container">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="projects.html">Projects</a>
+      <span class="breadcrumb-separator">/</span>
+      <span>Sustainable Farming</span>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Project Hero Section -->
+    <section class="project-hero">
+      <div class="section-title">
+        <h1>Sustainable Farming Program</h1>
+        <p>Promoting climate-resilient agriculture and agroforestry for improved livelihoods</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="content-section">
+        <h2>Program Overview</h2>
+        <p>Our Sustainable Farming program trains local farmers in climate-smart agricultural techniques, organic farming, and agroforestry practices. We're helping farmers adapt to climate change while improving food security and protecting the environment.</p>
+        
+        <div class="farming-stats">
+          <div class="farming-stat-card">
+            <i class="fas fa-tractor"></i>
+            <h3>50+</h3>
+            <p>Farmers Trained</p>
+          </div>
+          <div class="farming-stat-card">
+            <i class="fas fa-seedling"></i>
+            <h3>20</h3>
+            <p>Acres Under Sustainable Farming</p>
+          </div>
+          <div class="farming-stat-card">
+            <i class="fas fa-tree"></i>
+            <h3>1,200</h3>
+            <p>Fruit Trees Planted</p>
+          </div>
+          <div class="farming-stat-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>40%</h3>
+            <p>Yield Increase</p>
+          </div>
+        </div>
+
+        <h3>Sustainable Techniques</h3>
+        <div class="techniques-grid">
+          <div class="technique-card">
+            <i class="fas fa-leaf"></i>
+            <h4>Organic Farming</h4>
+            <p>Using natural fertilizers and pest control methods to protect soil health</p>
+          </div>
+          <div class="technique-card">
+            <i class="fas fa-water"></i>
+            <h4>Water Conservation</h4>
+            <p>Drip irrigation and rainwater harvesting for efficient water use</p>
+          </div>
+          <div class="technique-card">
+            <i class="fas fa-layer-group"></i>
+            <h4>Agroforestry</h4>
+            <p>Integrating trees with crops for improved soil fertility and biodiversity</p>
+          </div>
+          <div class="technique-card">
+            <i class="fas fa-recycle"></i>
+            <h4>Composting</h4>
+            <p>Transforming farm waste into nutrient-rich organic fertilizer</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Farmer Success Story -->
+      <div class="farmer-success">
+        <h2><i class="fas fa-star"></i> Success Story: Juma's Farm Transformation</h2>
+        <p>Juma Mohamed, a farmer from Mwabungu, has transformed his 2-acre farm from struggling conventional agriculture to a thriving sustainable enterprise.</p>
+        <p>"Before joining this program, I was spending most of my income on chemical fertilizers and pesticides. My soil was getting poorer each season. Now, I use compost from my farm waste, practice crop rotation, and have planted fruit trees that provide shade and additional income. My yields have increased by 50%, and my production costs have reduced significantly," Juma shares.</p>
+        <p>Juma now mentors other farmers in his community and has established a demonstration plot that attracts visitors from neighboring villages.</p>
+        
+        <div class="farmer-profile">
+          <img src="images/juma-farmer.jpg" alt="Juma Mohamed">
+          <div>
+            <h4>Juma Mohamed</h4>
+            <p>Sustainable Farmer & Community Mentor</p>
+            <p><strong>Farm Size:</strong> 2 acres | <strong>Main Crops:</strong> Maize, Beans, Mangoes</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Impact Metrics -->
+      <div class="impact-metrics">
+        <h2 style="text-align: center; margin-bottom: 30px;">Program Impact</h2>
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <h4>60%</h4>
+            <p>Reduction in chemical fertilizer use</p>
+          </div>
+          <div class="metric-item">
+            <h4>35%</h4>
+            <p>Water savings through efficient irrigation</p>
+          </div>
+          <div class="metric-item">
+            <h4>KES 2.1M</h4>
+            <p>Additional income generated for farmers</p>
+          </div>
+          <div class="metric-item">
+            <h4>90%</h4>
+            <p>Farmer satisfaction rate</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Crop Showcase -->
+      <div class="crop-showcase">
+        <h2 style="grid-column: 1/-1; text-align: center;">Featured Crops</h2>
+        <div class="crop-item">
+          <img src="images/mango-crop.jpg" alt="Mangoes">
+          <h4>Mangoes</h4>
+          <p>Improved varieties with higher yields</p>
+        </div>
+        <div class="crop-item">
+          <img src="images/maize-crop.jpg" alt="Maize">
+          <h4>Maize</h4>
+          <p>Drought-resistant varieties</p>
+        </div>
+        <div class="crop-item">
+          <img src="images/beans-crop.jpg" alt="Beans">
+          <h4>Beans</h4>
+          <p>Soil-enriching legumes</p>
+        </div>
+        <div class="crop-item">
+          <img src="images/vegetables-crop.jpg" alt="Vegetables">
+          <h4>Vegetables</h4>
+          <p>Organic kale, spinach, tomatoes</p>
+        </div>
+      </div>
+
+      <!-- Partner Testimonials Carousel -->
+      <div class="testimonial-carousel">
+        <h2 style="text-align: center; margin-bottom: 30px;">What Our Partners Say</h2>
+        
+        <div class="testimonial-slide active">
+          <div class="testimonial-content">
+            "The sustainable farming program has revolutionized agriculture in our community. Farmers are seeing real benefits - better yields, lower costs, and healthier soils. This is the future of farming in Kwale County."
+          </div>
+          <div class="testimonial-author">
+            <img src="images/agriculture-officer.jpg" alt="Agriculture Officer">
+            <div class="author-info">
+              <h4>Mr. Samuel Kiptoo</h4>
+              <p>Agriculture Extension Officer, Kwale County</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testimonial-content">
+            "As a women's group leader, I've seen how these farming techniques have empowered our members. We're producing more food for our families and generating income from the surplus. The compost-making training has been particularly valuable."
+          </div>
+          <div class="testimonial-author">
+            <img src="images/women-group-leader.jpg" alt="Women Group Leader">
+            <div class="author-info">
+              <h4>Mama Asha Kombo</h4>
+              <p>Leader, Mwabungu Women Farmers Group</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testimonial-content">
+            "The integration of fruit trees with food crops has been a game-changer for my farm. I get fruits for sale and the trees improve my soil. My children also enjoy the shade when they help on the farm."
+          </div>
+          <div class="testimonial-author">
+            <img src="images/youth-farmer.jpg" alt="Youth Farmer">
+            <div class="author-info">
+              <h4>Ahmed Salim</h4>
+              <p>Youth Farmer, Tiwi Area</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-nav">
+          <span class="testimonial-dot active" data-slide="0"></span>
+          <span class="testimonial-dot" data-slide="1"></span>
+          <span class="testimonial-dot" data-slide="2"></span>
+        </div>
+      </div>
+
+      <!-- Training Programs -->
+      <div class="content-section">
+        <h2>Farmer Training Programs</h2>
+        <div class="techniques-grid">
+          <div class="technique-card">
+            <i class="fas fa-graduation-cap"></i>
+            <h4>Basic Sustainable Farming</h4>
+            <p>4-week intensive training on organic practices and soil management</p>
+          </div>
+          <div class="technique-card">
+            <i class="fas fa-tint"></i>
+            <h4>Water Management</h4>
+            <p>Training on rainwater harvesting and efficient irrigation systems</p>
+          </div>
+          <div class="technique-card">
+            <i class="fas fa-seedling"></i>
+            <h4>Agroforestry</h4>
+            <p>Integrating trees with crops for multiple benefits</p>
+          </div>
+          <div class="technique-card">
+            <i class="fas fa-chart-line"></i>
+            <h4>Market Linkages</h4>
+            <p>Connecting farmers to better markets and value addition</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Get Involved -->
+      <div class="content-section" style="text-align: center;">
+        <h2>Join the Sustainable Farming Movement</h2>
+        <p>Help us expand climate-smart agriculture to more farmers in Kwale County.</p>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+          <a href="contact.html" class="btn">Register for Training</a>
+          <a href="#" class="btn btn-secondary">Support a Farmer</a>
+          <a href="contact.html" class="btn">Visit Demonstration Farm</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <img src="images/fazil-chinoy-logo.jpg" alt="Fazil Chinoy Fellowship" class="footer-logo">
+      
+      <div class="footer-middle">
+        <div class="footer-social">
+          <a href="https://www.facebook.com/profile.php?id=61569551323460" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/greenmindsyouthinitiative?utm_source=qr&igsh=dXdjbzA1bXltZGU=" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:greenmindsyouthinitiative20@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://wa.me/+254769718607" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Legal Links -->
+        <div class="legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        
+        <p class="copyright">&copy; 2025 Green Minds Youth Initiative. All Rights Reserved.</p>
+      </div>
+      
+      <img src="images/sambasports-logo.jpg" alt="SambaSports Youth Trust" class="footer-logo">
+    </div>
+  </footer>
+
+  <script>
+    // Testimonial carousel functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.testimonial-slide');
+      const dots = document.querySelectorAll('.testimonial-dot');
+      let currentSlide = 0;
+
+      function showSlide(n) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        slides[n].classList.add('active');
+        dots[n].classList.add('active');
+        currentSlide = n;
+      }
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => showSlide(index));
+      });
+
+      // Auto-advance slides
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }, 5000);
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
