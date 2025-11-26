@@ -114,44 +114,50 @@ function updateBreadcrumb() {
   const breadcrumbElement = document.getElementById('currentPage');
   
   if (breadcrumbElement && pageName !== 'index') {
-    breadcrumbElement.textContent = pageName;
+    breadcrumbElement.textContent = pageName.charAt(0).toUpperCase() + pageName.slice(1);
   } else if (breadcrumbElement) {
     breadcrumbElement.textContent = 'Home';
   }
 }
 
-// Search functionality
+// Search functionality - UPDATED URLs
 const searchData = {
   pages: [
     {
       title: "About Us",
       description: "Learn about our mission, vision, and core values",
-      url: "about.html",
+      url: "pages/about.html",
       keywords: "about mission vision values team"
     },
     {
       title: "Tree Planting Projects",
       description: "Kwale Green Corridor and reforestation initiatives",
-      url: "projects.html#reforestation",
+      url: "pages/projects.html#reforestation",
       keywords: "tree planting reforestation green corridor"
     },
     {
       title: "Waste Management",
       description: "Zero waste communities and recycling programs",
-      url: "projects.html#waste",
+      url: "pages/projects.html#waste",
       keywords: "waste management recycling zero waste"
     },
     {
       title: "Environmental Education",
       description: "Green Schools Program and youth education",
-      url: "projects.html#education",
+      url: "pages/projects.html#education",
       keywords: "education schools students training"
     },
     {
       title: "Contact Information",
       description: "Get in touch with our team",
-      url: "contact.html",
+      url: "pages/contact.html",
       keywords: "contact email phone address"
+    },
+    {
+      title: "Donate",
+      description: "Support our environmental initiatives",
+      url: "pages/donate.html",
+      keywords: "donate support contribute help"
     }
   ]
 };

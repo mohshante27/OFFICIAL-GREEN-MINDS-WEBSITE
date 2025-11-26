@@ -3,11 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Donate - Support Green Minds Youth Initiative</title>
-  <link rel="icon" href="images/green-minds-logo.png" type="image/png">
+  <title>Donate-Green Minds Youth Initiative</title>
+  <link rel="icon" href="../images/green-minds-logo.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<!-- Combined Header & Navigation -->
+<header class="combined-header">
+  <div class="header-nav-container">
+    <!-- Logo and Brand -->
+    <div class="header-brand">
+      <img src="../images/green-minds-logo.png" alt="Green Minds Logo" class="header-logo">
+      <div class="header-text">
+        <h1 class="header-title">DONATE</h1>
+        <p class="header-subtitle">Support Our Cause</p>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Navigation Content -->
+    <div class="header-nav-content" id="headerNavContent">
+      <!-- Navigation Menu -->
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="donate.html"class="active">Donate</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+
+      <!-- Search and Social Icons -->
+      <div class="header-utilities">
+        <div class="search-container">
+          <input type="search" placeholder="Search..." id="searchInput">
+          <button type="button" id="searchButton"><i class="fas fa-search"></i></button>
+          <div class="search-results" id="searchResults"></div>
+        </div>
+        
+        <div class="social-icons">
+          <a href="https://www.facebook.com/profile.php?id=61569551323460" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/greenmindsyouthinitiative?utm_source=qr&igsh=dXdjbzA1bXltZGU=" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:greenmindsyouthinitiative20@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://wa.me/+254769718607" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://linkedin.com/green-minds-youth-initiative/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb">
+    <div class="nav-container">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <span>Donate</span>
+    </div>
+  </nav>
   <style>
+    /* Donation-specific styles */
     .donate-hero {
       background: linear-gradient(135deg, rgba(46, 139, 87, 0.9) 0%, rgba(61, 165, 106, 0.8) 100%), url('images/donate-hero.jpg') center/cover no-repeat;
       color: var(--white);
@@ -82,6 +140,7 @@
       padding: 40px;
       border-radius: var(--border-radius);
       margin: 40px 0;
+      border: 1px solid var(--light-gray);
     }
 
     .method-tabs {
@@ -160,6 +219,7 @@
       padding: 25px;
       border-radius: var(--border-radius);
       margin-top: 20px;
+      border: 1px solid var(--light-gray);
     }
 
     .step {
@@ -212,6 +272,7 @@
       border-radius: var(--border-radius);
       margin: 40px 0;
       text-align: center;
+      border: 1px solid var(--light-gray);
     }
 
     .custom-amounts {
@@ -299,64 +360,44 @@
       color: var(--medium-green);
       margin-bottom: 15px;
     }
+
+    .mpesa-details-card {
+      background: var(--white);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      border: 2px solid var(--dark-green);
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .mpesa-details-card h4 {
+      color: var(--dark-green);
+      margin-bottom: 15px;
+    }
+
+    .detail-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+      padding: 10px;
+      background: var(--light-beige);
+      border-radius: 5px;
+    }
+
+    .detail-label {
+      font-weight: bold;
+      color: var(--dark-gray);
+    }
+
+    .detail-value {
+      font-weight: bold;
+      color: var(--dark-green);
+    }
   </style>
 </head>
 <body>
-  <!-- Combined Header & Navigation -->
-  <header class="combined-header">
-    <div class="header-nav-container">
-      <!-- Logo and Brand -->
-      <div class="header-brand">
-        <img src="images/green-minds-logo.png" alt="Green Minds Logo" class="header-logo">
-        <div class="header-text">
-          <h1 class="header-title">SUPPORT OUR MISSION</h1>
-          <p class="header-subtitle">Your Donation Creates Lasting Change</p>
-        </div>
-      </div>
-
-      <!-- Mobile Menu Button -->
-      <button class="mobile-menu-btn" id="mobileMenuBtn">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <!-- Navigation Content -->
-      <div class="header-nav-content" id="headerNavContent">
-        <!-- Navigation Menu -->
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="donate.html" class="active">Donate</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-
-        <!-- Search and Social Icons -->
-        <div class="header-utilities">
-          <div class="search-container">
-            <input type="search" placeholder="Search..." id="searchInput">
-            <button type="button" id="searchButton"><i class="fas fa-search"></i></button>
-            <div class="search-results" id="searchResults"></div>
-          </div>
-          
-          <div class="social-icons">
-            <a href="https://www.facebook.com/profile.php?id=61569551323460" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/greenmindsyouthinitiative?utm_source=qr&igsh=dXdjbzA1bXltZGU=" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:greenmindsyouthinitiative20@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://wa.me/+254769718607" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Breadcrumb Navigation -->
-  <nav class="breadcrumb">
-    <div class="nav-container">
-      <a href="index.html">Home</a>
-      <span class="breadcrumb-separator">/</span>
-      <span>Donate</span>
-    </div>
-  </nav>
+  
+  
 
   <!-- Main Content -->
   <main>
@@ -438,9 +479,27 @@
           <!-- M-Pesa Payment Form -->
           <div class="payment-form active" id="mpesaForm">
             <h3>Pay with M-Pesa</h3>
+            
+            <!-- M-Pesa Details Card -->
+            <div class="mpesa-details-card">
+              <h4>M-Pesa Payment Details</h4>
+              <div class="detail-item">
+                <span class="detail-label">Paybill Number:</span>
+                <span class="detail-value">247247</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Account Number:</span>
+                <span class="detail-value">654333</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Amount:</span>
+                <span class="detail-value" id="mpesaDetailAmount">KES 1,000</span>
+              </div>
+            </div>
+            
             <form id="mpesaDonationForm">
               <div class="form-group">
-                <label for="phoneNumber">M-Pesa Phone Number</label>
+                <label for="phoneNumber">M-Pesa Phone Number (for receipt)</label>
                 <input type="tel" id="phoneNumber" placeholder="07XX XXX XXX" required pattern="[0-9]{10}">
               </div>
               
@@ -450,28 +509,40 @@
               </div>
 
               <div class="mpesa-steps">
-                <h4>How to complete your donation:</h4>
+                <h4>How to complete your M-Pesa donation:</h4>
                 <div class="step">
                   <div class="step-number">1</div>
-                  <div>Enter your M-Pesa registered phone number above</div>
+                  <div>Go to <strong>M-PESA</strong> on your phone</div>
                 </div>
                 <div class="step">
                   <div class="step-number">2</div>
-                  <div>Click "Donate Now" to initiate payment</div>
+                  <div>Select <strong>Lipa Na M-PESA</strong></div>
                 </div>
                 <div class="step">
                   <div class="step-number">3</div>
-                  <div>Check your phone for M-Pesa prompt</div>
+                  <div>Select <strong>Pay Bill</strong></div>
                 </div>
                 <div class="step">
                   <div class="step-number">4</div>
-                  <div>Enter your M-Pesa PIN to complete payment</div>
+                  <div>Enter Business Number: <strong>247247</strong></div>
+                </div>
+                <div class="step">
+                  <div class="step-number">5</div>
+                  <div>Enter Account Number: <strong>654333</strong></div>
+                </div>
+                <div class="step">
+                  <div class="step-number">6</div>
+                  <div>Enter Amount: <strong id="stepAmount">KES 1,000</strong></div>
+                </div>
+                <div class="step">
+                  <div class="step-number">7</div>
+                  <div>Enter your M-PESA PIN and confirm</div>
                 </div>
               </div>
 
               <div class="loading-spinner" id="mpesaLoading">
                 <div class="spinner"></div>
-                <p>Processing your donation... Please check your phone for M-Pesa prompt.</p>
+                <p>Please complete the M-Pesa payment on your phone using the steps above.</p>
               </div>
 
               <div class="success-message" id="mpesaSuccess">
@@ -482,7 +553,7 @@
               </div>
 
               <button type="submit" class="btn" style="width: 100%; margin-top: 20px;">
-                <i class="fas fa-mobile-alt"></i> Donate Now via M-Pesa
+                <i class="fas fa-mobile-alt"></i> I've Completed M-Pesa Payment
               </button>
             </form>
           </div>
@@ -525,10 +596,9 @@
               <div style="background: var(--white); padding: 25px; border-radius: var(--border-radius); margin-bottom: 20px;">
                 <h4>Account Details</h4>
                 <p><strong>Bank:</strong> EQUITY BANK</p>
-                <p><strong>Account Name:</strong> Green Minds Youth Initiative</p>
-                <p><strong>Account Number:</strong>0440185929903</p>
-                <p><strong>Branch:</strong> Ukunda Branch</p>
-                <p><strong>Swift Code:</strong> KCBLKENX</p>
+                <p><strong>Account Name:</strong> GREEN MINDS YOUTH INITIATIVE</p>
+                <p><strong>Account Number:</strong> 04401859229903</p>
+                <p><strong>Swift Code:</strong> EQBLKENA</p>
               </div>
               
               <div class="form-group">
@@ -540,6 +610,13 @@
                 After making your transfer, please email the receipt to 
                 <a href="mailto:greenmindsyouthinitiative20@gmail.com">greenmindsyouthinitiative20@gmail.com</a>
               </p>
+              
+              <div style="background: var(--light-beige); padding: 20px; border-radius: var(--border-radius); margin-top: 20px;">
+                <p><strong>Contact Equity Bank:</strong></p>
+                <p>Phone: 0763 063 000</p>
+                <p>Email: info@equitybank.co.ke</p>
+                <p>Website: <a href="http://equitygroupholdings.com/ke" target="_blank">equitygroupholdings.com/ke</a></p>
+              </div>
             </div>
           </div>
 
@@ -555,7 +632,7 @@
         <div class="impact-item">
           <i class="fas fa-tree"></i>
           <h3>Tree Planting</h3>
-          <p>60% of donations support our reforestation efforts and community nurseries</p>
+          <p>30% of donations support our reforestation efforts and community nurseries</p>
         </div>
         <div class="impact-item">
           <i class="fas fa-recycle"></i>
@@ -565,12 +642,12 @@
         <div class="impact-item">
           <i class="fas fa-graduation-cap"></i>
           <h3>Education</h3>
-          <p>10% supports environmental education in schools and communities</p>
+          <p>30% supports environmental education in schools and communities</p>
         </div>
         <div class="impact-item">
           <i class="fas fa-cogs"></i>
           <h3>Administration</h3>
-          <p>5% covers operational costs to ensure maximum impact</p>
+          <p>15% covers operational costs to ensure maximum impact</p>
         </div>
       </div>
 
@@ -593,7 +670,7 @@
   <!-- Footer -->
   <footer>
     <div class="footer-container">
-      <img src="images/fazil-chinoy-logo.jpg" alt="Fazil Chinoy Fellowship" class="footer-logo">
+      <img src="../images/fazil-chinoy-logo.jpg" alt="Fazil Chinoy Fellowship" class="footer-logo">
       
       <div class="footer-middle">
         <div class="footer-social">
@@ -604,7 +681,7 @@
         </div>
         
         <div class="footer-links">
-          <a href="index.html">Home</a>
+          <a href="../index.html">Home</a>
           <a href="about.html">About</a>
           <a href="projects.html">Projects</a>
           <a href="contact.html">Contact</a>
@@ -620,7 +697,7 @@
         <p class="copyright">&copy; 2025 Green Minds Youth Initiative. All Rights Reserved.</p>
       </div>
       
-      <img src="images/sambasports-logo.jpg" alt="SambaSports Youth Trust" class="footer-logo">
+      <img src="../images/sambasports-logo.jpg" alt="SambaSports Youth Trust" class="footer-logo">
     </div>
   </footer>
 
@@ -632,6 +709,23 @@
     document.addEventListener('DOMContentLoaded', function() {
       updateAmountDisplay();
       setupEventListeners();
+      
+      // Mobile menu functionality
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const headerNavContent = document.getElementById('headerNavContent');
+      
+      if (mobileMenuBtn && headerNavContent) {
+        mobileMenuBtn.addEventListener('click', function() {
+          headerNavContent.classList.toggle('mobile-open');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+          if (!event.target.closest('.header-nav-container')) {
+            headerNavContent.classList.remove('mobile-open');
+          }
+        });
+      }
     });
 
     // Set up event listeners
@@ -658,6 +752,17 @@
           selectedAmount = value;
           updateAmountDisplay();
         }
+      });
+
+      // Format phone number automatically
+      document.getElementById('phoneNumber').addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '');
+        if (value.startsWith('0') && value.length <= 10) {
+          value = value.substring(0, 10);
+        } else if (value.startsWith('254') && value.length <= 12) {
+          value = value.substring(0, 12);
+        }
+        e.target.value = value;
       });
     }
 
@@ -694,6 +799,10 @@
       document.getElementById('cardAmount').value = formattedAmount;
       document.getElementById('bankAmount').value = formattedAmount;
       
+      // Update M-Pesa step amount and detail card
+      document.getElementById('stepAmount').textContent = formattedAmount;
+      document.getElementById('mpesaDetailAmount').textContent = formattedAmount;
+      
       // Update custom amount input
       document.getElementById('customAmount').value = selectedAmount;
       
@@ -727,18 +836,27 @@
         return;
       }
 
-      // Show loading spinner
+      // Show loading spinner with updated message
       const loadingSpinner = document.getElementById('mpesaLoading');
       loadingSpinner.style.display = 'block';
 
-      // Simulate M-Pesa API call (replace with actual API integration)
+      // Since this is manual M-Pesa, we'll simulate a successful donation
+      // In a real implementation, you might want to track pending donations
       simulateMpesaPayment(phoneNumber, selectedAmount);
     }
 
     // Validate Kenyan phone number
     function isValidPhoneNumber(phone) {
       const cleaned = phone.replace(/\D/g, '');
-      return cleaned.length === 10 && /^0[17]\d{8}$/.test(cleaned);
+      // Handle numbers starting with 254
+      if (cleaned.length === 12 && cleaned.startsWith('254')) {
+        return true;
+      }
+      // Handle numbers starting with 0
+      if (cleaned.length === 10 && cleaned.startsWith('0')) {
+        return true;
+      }
+      return false;
     }
 
     // Simulate M-Pesa payment (Replace with actual Daraja API integration)
@@ -746,9 +864,11 @@
       // In a real implementation, you would call the Safaricom Daraja API here
       // This is a simulation for demonstration purposes
 
-      console.log('Initiating M-Pesa payment:');
+      console.log('M-Pesa payment details:');
       console.log('Phone:', phoneNumber);
       console.log('Amount:', amount);
+      console.log('Paybill: 247247');
+      console.log('Account: 654333');
 
       // Simulate API delay
       setTimeout(() => {
@@ -761,7 +881,7 @@
         // Log transaction (in real implementation, save to database)
         logTransaction(phoneNumber, amount, 'mpesa', 'completed');
         
-      }, 3000);
+      }, 2000);
     }
 
     // Log transaction (for demonstration - replace with actual backend)
@@ -787,40 +907,16 @@
       updateAmountDisplay();
     }
 
-    // Real M-Pesa API Integration Function (Template)
-    async function processRealMpesaPayment(phoneNumber, amount) {
-      /*
-      // This is a template for actual M-Pesa Daraja API integration
-      // You'll need to set up a backend server for security
-      
-      try {
-        const response = await fetch('/api/mpesa-payment', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            phoneNumber: phoneNumber,
-            amount: amount,
-            accountReference: 'GREENMINDS',
-            transactionDesc: 'Donation to Green Minds Youth Initiative'
-          })
-        });
-
-        const result = await response.json();
-        
-        if (result.success) {
-          // Payment initiated successfully
-          return { success: true, data: result.data };
-        } else {
-          // Handle error
-          return { success: false, error: result.error };
-        }
-      } catch (error) {
-        console.error('M-Pesa API error:', error);
-        return { success: false, error: 'Network error' };
-      }
-      */
+    // Show M-Pesa details clearly
+    function showMpesaDetails() {
+      const details = `
+        M-Pesa Donation Details:
+        • Paybill Number: 247247
+        • Account Number: 654333
+        • Amount: KES ${selectedAmount.toLocaleString()}
+        • Reference: Green Minds Youth Initiative
+      `;
+      console.log(details);
     }
   </script>
   <script src="script.js"></script>
