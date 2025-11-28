@@ -2162,3 +2162,56 @@ img {
     max-width: 280px;
   }
 }
+/* Add smooth transitions for slider movement */
+.team-slider, .partners-slider {
+  transition: transform 0.5s ease;
+}
+
+/* Ensure proper overflow handling */
+.team-slider-container, .partners-slider-container {
+  overflow: hidden;
+}
+
+/* Make sure slides are properly aligned */
+.team-slider, .partners-slider {
+  display: flex;
+  gap: 25px; /* For team slider */
+}
+
+.partners-slider {
+  gap: 30px; /* For partners slider */
+}
+
+/* Fix for mobile responsiveness */
+@media (max-width: 768px) {
+  .team-slide {
+    flex: 0 0 calc(100% - 20px);
+  }
+  
+  .partner-card {
+    min-width: calc(50% - 15px);
+  }
+}
+
+@media (max-width: 480px) {
+  .team-slide {
+    flex: 0 0 100%;
+  }
+  
+  .partner-card {
+    min-width: calc(100% - 10px);
+  }
+}
+/* Add to your styles.css */
+.team-slider, .partners-slider {
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    transition: opacity 0.5s ease;
+}
+
+/* Ensure proper overflow handling */
+.team-slider-container, .partners-slider-container {
+    overflow: hidden;
+}
